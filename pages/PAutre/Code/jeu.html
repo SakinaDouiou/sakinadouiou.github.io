@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Find the color</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/cssFindColor.css" />
+    <script type="text/javascript" src="../../../js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="../../../js/FindColorconfetti.js"></script>
+    <script type="text/javascript">
+ 
+  $(document).ready(function(){
+
+  var secondes = 5;
+  var on = false;
+  var reset = false;
+  var points = 0;
+ 
+ $("#score").text(points);
+         $(document).on("click",".intrus", function(){
+            
+            let audio = new Audio("../../../img/sonFindColor/blip.mp3");
+                    audio.play();
+
+           points = points + 1;
+           $("#score").text(points);
+         });
+
+  $("#rejouer").click(function(){
+    document.location.reload();
+  });   
+
+       $(document).on("click","#quitter",
+        function fermer() { 
+        window.close(); 
+        });    
+
+  $(".intrus").click(function(){
+    Start();
+  });
+  $(".intrus").click(function(){
+    Reset();
+  });
+ 
+
+  function chrono(){
+    secondes -= 1;
+
+   
+    if(secondes>=0){
+      $("#timer").html("00 : 0"+secondes);
+    }
+
+    if(secondes>0){
+        $(".autres").click(function(){
+    chrono();
+  });
+    }
+
+    if(secondes==0 && points<40){
+        $(".cercles1, .cercles2, .cercles3, .cercles4, #timer").css('visibility','hidden');
+         $("#score").css({
+                                'left':'46%',
+                                'top':'13%'});
+         $("#perdu, #rejouer, #quitter").css('visibility','visible');
+         $('#rejouer, #quitter').addClass('magictime spaceInDown');
+
+    }
+
+    if(secondes==0 && points>=10 && points<40){
+        $("#score").css('left','44%');
+
+    }
+
+  }
+ 
+  function Start(){
+    if(on===false){
+      timerID = setInterval(chrono, 1000);
+      on = true;
+      reset = false;
+    }
+  }
+ 
+  function Stop(){
+    if(on===true){
+      on = false;
+      clearTimeout(timerID);
+    }
+  }
+ 
+  function Reset(){
+    if(on===true)
+    {
+      clearInterval(timerID);
+      secondes = 5;
+      $("#timer").html("00 : 05");
+      reset = true;
+      timerID = setInterval(chrono, 1000);
+      on = true;
+
+    }
+  }
+
+        $(document).on("click",".intrus", function(){ 
+
+              if( points == 1 ){
+                    
+                    $(".autres").css('background-color','#426C9A');
+                    $(".B1").css({
+                                'left':'51%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#426CC6',
+                                'left':'0%',
+                                'top':'51%'});
+                    
+              }  
+
+              if( points == 2 ){
+                    $(".autres, #quitter").css('background-color','#A67AF8');
+                    $(".C1").css({
+                                'left':'0%',
+                                'top':'51%'});
+                    $(".intrus").css({
+                                'background-color':'#A64EF8',
+                                'left':'51%',
+                                'top':'51%'});
+                    $("#rejouer").css('background-color','#A64EF8');
+              }
+
+              if( points == 3 ){
+                    $(".autres, #quitter").css('background-color','#129188');
+                    $(".B1").css({
+                                'left':'51%',
+                                'top':'51%'});
+                    $(".intrus").css({
+                                'background-color':'#129162',
+                                'left':'51%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#129162');
+              }
+
+              if( points == 4 ){
+                    $(".autres, #quitter").css('background-color','#AD472E');
+                    $(".cercles1").css({
+                                'height':'155px',
+                                'width':'155px'});
+                    $(".B1").css({
+                                'left':'33%',
+                                'top':'0%'});
+                    $(".C1").css({
+                                'left':'66%',
+                                'top':'0%'});
+                    $(".cercles2").css('visibility','visible');
+                    $(".intrus").css({
+                                'background-color':'#CF472E',
+                                'left':'0%',
+                                'top':'33%'});
+                    $("#rejouer").css('background-color','#CF472E');
+              }
+
+              if( points == 5 ){
+                    $(".autres, #quitter").css('background-color','#49BC47');
+                    $(".H1").css({
+                                'left':'0%',
+                                'top':'33%'});
+                    $(".intrus").css({
+                                'background-color':'#49D847',
+                                'left':'66%',
+                                'top':'66%'});
+                    $("#rejouer").css('background-color','#49D847');
+              }
+
+              if( points == 6 ){
+                    $(".autres, #quitter").css('background-color','#F993E2');
+                    $(".D1").css({
+                                'left':'66%',
+                                'top':'66%'});
+                    $(".intrus").css({
+                                'background-color':'#F9B0E2',
+                                'left':'33%',
+                                'top':'33%'});
+                    $("#rejouer").css('background-color','#F9B0E2');
+              }
+
+              if( points == 7 ){
+                    $(".autres, #quitter").css('background-color','#B32873');
+                    $(".A1").css({
+                                'left':'33%',
+                                'top':'33%'});
+                    $(".intrus").css({
+                                'background-color':'#CB2873',
+                                'left':'0%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#CB2873');
+              }
+
+              if( points == 8 ){
+                    $(".autres, #quitter").css('background-color','#1CE9B1');
+                    $(".A1").css({
+                                'left':'33%',
+                                'top':'33%'});
+                    $(".intrus").css({
+                                'background-color':'#1CE99D',
+                                'left':'0%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#1CE99D');
+              }
+
+              if( points == 9 ){
+                    $(".autres, #quitter").css('background-color','#D6B960');
+                    $(".E1").css({
+                                'left':'0%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#D6B94A',
+                                'left':'66%',
+                                'top':'33%'});
+                    $("#rejouer").css('background-color','#D6B94A');
+              }
+
+              if( points == 10 ){
+                    $(".autres, #quitter").css('background-color','#C0848D');
+                    $(".G1").css({
+                                'left':'66%',
+                                'top':'33%'});
+                    $(".intrus").css({
+                                'background-color':'#C0998D',
+                                'left':'33%',
+                                'top':'66%'});
+                    $("#rejouer").css('background-color','#C0998D');
+              }
+
+              if( points == 11 ){
+                    $(".autres, #quitter").css('background-color','#BFE1A4');
+                    $(".F1").css({
+                                'left':'33%',
+                                'top':'66%'});
+                    $(".intrus").css({
+                                'background-color':'#ABE1A4',
+                                'left':'0%',
+                                'top':'66%'});
+                    $("#rejouer").css('background-color','#ABE1A4');
+              }
+
+              if( points == 12 ){
+                    $(".autres, #quitter").css('background-color','#6CCC5F');
+                    $(".C1").css({
+                                'left':'0%',
+                                'top':'66%'});
+                    $(".intrus").css({
+                                'background-color':'#5ACC5F',
+                                'left':'66%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#5ACC5F');
+              }
+
+              if( points == 13 ){
+                    $(".autres, #quitter").css('background-color','#0C0B85');
+                    $(".B1").css({
+                                'left':'66%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#0C0B98',
+                                'left':'33%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#0C0B98');
+              }
+
+              if( points == 14 ){
+                    $(".autres, #quitter").css('background-color','#B035D3');
+                    $(".cercles1, .cercles2").css({
+                                'height':'120px',
+                                'width':'120px'});
+                    $(".A1").css({
+                                'left':'0%',
+                                'top':'0%'});
+                    $(".B1").css({
+                                'left':'25%',
+                                'top':'0%'});
+                    $(".C1").css({
+                                'left':'50%',
+                                'top':'0%'});
+                    $(".D1").css({
+                                'left':'75%',
+                                'top':'0%'});
+                    $(".E1").css({
+                                'left':'0%',
+                                'top':'25%'});
+                    $(".F1").css({
+                                'left':'25%',
+                                'top':'25%'});
+                    $(".G1").css({
+                                'left':'50%',
+                                'top':'25%'});
+                    $(".H1").css({
+                                'left':'75%',
+                                'top':'25%'});
+                    $(".cercles3").css('visibility','visible');
+                    $(".intrus").css({
+                                'background-color':'#B035C1',
+                                'left':'75%',
+                                'top':'75%'});
+                    $("#rejouer").css('background-color','#B035C1');
+              }
+
+              if( points == 15 ){
+                    $(".autres, #quitter").css('background-color','#B3B231');
+                    $(".B1").css({
+                                'left':'75%',
+                                'top':'75%'});
+                    $(".intrus").css({
+                                'background-color':'#A1B231',
+                                'left':'25%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#A1B231');
+              }
+
+              if( points == 16 ){
+                    $(".autres, #quitter").css('background-color','#221E0C');
+                    $(".H1").css({
+                                'left':'25%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#220E0C',
+                                'left':'75%',
+                                'top':'25%'});
+                    $("#rejouer").css('background-color','#220E0C');
+              }
+
+              if( points == 17 ){
+                    $(".autres, #quitter").css('background-color','#4E9682');
+                    $(".K1").css({
+                                'left':'75%',
+                                'top':'25%'});
+                    $(".intrus").css({
+                                'background-color':'#3F9682',
+                                'left':'50%',
+                                'top':'50%'});
+                    $("#rejouer").css('background-color','#3F9682');
+              }
+
+              if( points == 18 ){
+                    $(".autres, #quitter").css('background-color','#E6B952');
+                    $(".E1").css({
+                                'left':'50%',
+                                'top':'50%'});
+                    $(".intrus").css({
+                                'background-color':'#E6B942',
+                                'left':'0%',
+                                'top':'25%'});
+                    $("#rejouer").css('background-color','#E6B942');
+              }
+
+              if( points == 19 ){
+                    $(".autres, #quitter").css('background-color','#D5B39C');
+                    $(".C1").css({
+                                'left':'0%',
+                                'top':'25%'});
+                    $(".intrus").css({
+                                'background-color':'#D5C49C',
+                                'left':'50%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#D5C49C');
+              }
+
+              if( points == 20 ){
+                    $(".autres, #quitter").css('background-color','#EC4D80');
+                    $(".I1").css({
+                                'left':'50%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#EC4D8F',
+                                'left':'0%',
+                                'top':'50%'});
+                    $("#rejouer").css('background-color','#EC4D8F');
+              }
+
+              if( points == 21 ){
+                    $(".autres, #quitter").css('background-color','#A3CA4E');
+                    $(".N1").css({
+                                'left':'0%',
+                                'top':'50%'});
+                    $(".intrus").css({
+                                'background-color':'#B2CA4E',
+                                'left':'25%',
+                                'top':'75%'});
+                    $("#rejouer").css('background-color','#B2CA4E');
+              }
+
+              if( points == 22 ){
+                    $(".autres, #quitter").css('background-color','#7A94C5');
+                    $(".A1").css({
+                                'left':'25%',
+                                'top':'75%'});
+                    $(".intrus").css({
+                                'background-color':'#7A94D9',
+                                'left':'0%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#7A94D9');
+              }
+
+              if( points == 23 ){
+                    $(".autres, #quitter").css('background-color','#3638CE');
+                    $(".G1").css({
+                                'left':'0%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#3638BC',
+                                'left':'50%',
+                                'top':'25%'});
+                    $("#rejouer").css('background-color','#3638BC');
+              }
+
+              if( points == 24 ){
+                    $(".autres, #quitter").css('background-color','#97A17B');
+                    $(".L1").css({
+                                'left':'50%',
+                                'top':'25%'});
+                    $(".intrus").css({
+                                'background-color':'#97A165',
+                                'left':'75%',
+                                'top':'50%'});
+                    $("#rejouer").css('background-color','#97A165');
+              }
+
+              if( points == 25 ){
+                    $(".autres, #quitter").css('background-color','#E5FA13');
+                    $(".M1").css({
+                                'left':'75%',
+                                'top':'50%'});
+                    $(".intrus").css({
+                                'background-color':'#F8F913',
+                                'left':'0%',
+                                'top':'75%'});
+                    $("#rejouer").css('background-color','#F8F913');
+              }
+
+              if( points == 26 ){
+                    $(".autres, #quitter").css('background-color','#7C57C0');
+                    $(".O1").css({
+                                'left':'0%',
+                                'top':'75%'});
+                    $(".intrus").css({
+                                'background-color':'#6857C0',
+                                'left':'50%',
+                                'top':'75%'});
+                    $("#rejouer").css('background-color','#6857C0');
+              }
+
+              if( points == 27 ){
+                    $(".autres, #quitter").css('background-color','#876276');
+                    $(".F1").css({
+                                'left':'50%',
+                                'top':'75%'});
+                    $(".intrus").css({
+                                'background-color':'#876266',
+                                'left':'25%',
+                                'top':'25%'});
+                    $("#rejouer").css('background-color','#876266');
+              }
+
+              if( points == 28 ){
+                    $(".autres, #quitter").css('background-color','#CA3F32');
+                    $(".cercles1, .cercles2, .cercles3").css({
+                                'height':'95px',
+                                'width':'95px'});
+                    $(".cercles4").css('visibility','visible');
+                    $(".A1").css({
+                                'left':'0%',
+                                'top':'0%'});
+                    $(".B1").css({
+                                'left':'20%',
+                                'top':'0%'});
+                    $(".C1").css({
+                                'left':'40%',
+                                'top':'0%'});
+                    $(".D1").css({
+                                'left':'60%',
+                                'top':'0%'});
+                    $(".E1").css({
+                                'left':'80%',
+                                'top':'80%'});
+                    $(".F1").css({
+                                'left':'0%',
+                                'top':'20%'});
+                    $(".G1").css({
+                                'left':'20%',
+                                'top':'20%'});
+                    $(".H1").css({
+                                'left':'40%',
+                                'top':'20%'});
+                    $(".I1").css({
+                                'left':'60%',
+                                'top':'20%'});
+                    $(".J1").css({
+                                'left':'80%',
+                                'top':'20%'});
+                    $(".K1").css({
+                                'left':'0%',
+                                'top':'40%'});
+                    $(".L1").css({
+                                'left':'20%',
+                                'top':'40%'});
+                    $(".M1").css({
+                                'left':'40%',
+                                'top':'40%'});
+                    $(".N1").css({
+                                'left':'60%',
+                                'top':'40%'});
+                    $(".O1").css({
+                                'left':'80%',
+                                'top':'40%'});
+                    $(".P1").css({
+                                'left':'0%',
+                                'top':'60%'});
+                    $(".Q1").css({
+                                'left':'20%',
+                                'top':'60%'});
+                    $(".R1").css({
+                                'left':'40%',
+                                'top':'60%'});
+                    $(".S1").css({
+                                'left':'60%',
+                                'top':'60%'});
+                    $(".T1").css({
+                                'left':'80%',
+                                'top':'60%'});
+                    $(".U1").css({
+                                'left':'0%',
+                                'top':'80%'});
+                    $(".V1").css({
+                                'left':'20%',
+                                'top':'80%'});
+                    $(".W1").css({
+                                'left':'40%',
+                                'top':'80%'});
+                    $(".X1").css({
+                                'left':'60%',
+                                'top':'80%'});
+                    $(".intrus").css({
+                                'background-color':'#DE3F32',
+                                'left':'80%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#DE3F32');
+              }
+
+              if( points == 29 ){
+                    $(".autres, #quitter").css('background-color','#D95D70');
+                    $(".F1").css({
+                                'left':'80%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#D96E70',
+                                'left':'0%',
+                                'top':'20%'});
+                    $("#rejouer").css('background-color','#D96E70');
+              }
+
+              if( points == 30 ){
+                    $(".autres, #quitter").css('background-color','#7739AB');
+                    $(".B1").css({
+                                'left':'0%',
+                                'top':'20%'});
+                    $(".intrus").css({
+                                'background-color':'#7723AB',
+                                'left':'20%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#7723AB');
+              }
+
+              if( points == 31 ){
+                    $(".autres, #quitter").css('background-color','#680453');
+                    $(".I1").css({
+                                'left':'20%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#550453',
+                                'left':'60%',
+                                'top':'20%'});
+                    $("#rejouer").css('background-color','#550453');
+              }
+
+              if( points == 32 ){
+                    $(".autres, #quitter").css('background-color','#E2633F');
+                    $(".O1").css({
+                                'left':'60%',
+                                'top':'20%'});
+                    $(".intrus").css({
+                                'background-color':'#E2632A',
+                                'left':'80%',
+                                'top':'40%'});
+                    $("#rejouer").css('background-color','#E2632A');
+              }
+
+              if( points == 33 ){
+                    $(".autres, #quitter").css('background-color','#9FC790');
+                    $(".S1").css({
+                                'left':'80%',
+                                'top':'40%'});
+                    $(".intrus").css({
+                                'background-color':'#AFC790',
+                                'left':'60%',
+                                'top':'60%'});
+                    $("#rejouer").css('background-color','#AFC790');
+              }
+
+              if( points == 34 ){
+                    $(".autres, #quitter").css('background-color','#92435A');
+                    $(".W1").css({
+                                'left':'60%',
+                                'top':'60%'});
+                    $(".intrus").css({
+                                'background-color':'#922A5A',
+                                'left':'40%',
+                                'top':'80%'});
+                    $("#rejouer").css('background-color','#922A5A');
+              }
+
+              if( points == 35 ){
+                    $(".autres, #quitter").css('background-color','#3C4934');
+                    $(".M1").css({
+                                'left':'40%',
+                                'top':'80%'});
+                    $(".intrus").css({
+                                'background-color':'#3C4926',
+                                'left':'40%',
+                                'top':'40%'});
+                    $("#rejouer").css('background-color','#3C4926');
+              }
+
+              if( points == 36 ){
+                    $(".autres, #quitter").css('background-color','#5EA362');
+                    $(".C1").css({
+                                'left':'40%',
+                                'top':'40%'});
+                    $(".intrus").css({
+                                'background-color':'#5EBC62',
+                                'left':'40%',
+                                'top':'0%'});
+                    $("#rejouer").css('background-color','#5EBC62');
+              }
+
+              if( points == 37 ){
+                    $(".autres, #quitter").css('background-color','#F37A5C');
+                    $(".K1").css({
+                                'left':'40%',
+                                'top':'0%'});
+                    $(".intrus").css({
+                                'background-color':'#F37A6E',
+                                'left':'0%',
+                                'top':'40%'});
+                    $("#rejouer").css('background-color','#F37A6E');
+              }
+
+              if( points == 38 ){
+                    $(".autres, #quitter").css('background-color','#746A31');
+                    $(".Q1").css({
+                                'left':'0%',
+                                'top':'40%'});
+                    $(".intrus").css({
+                                'background-color':'#746A48',
+                                'left':'20%',
+                                'top':'60%'});
+                    $("#rejouer").css('background-color','#746A48');
+              }
+
+              if( points == 39 ){
+                    $(".autres, #quitter").css('background-color','#7739AB');
+                    $(".X1").css({
+                                'left':'20%',
+                                'top':'60%'});
+                    $(".intrus").css({
+                                'background-color':'#7723AB',
+                                'left':'60%',
+                                'top':'80%'});
+                    $("#rejouer").css('background-color','#7723AB');
+              }
+
+              if( points == 40 ){
+                    $(".cercles1, .cercles2, .cercles3, .cercles4, #timer").css('visibility','hidden');
+                    $("#score").css({
+                                      'left':'44%',
+                                      'top':'13%'});
+                    $("#gagne, #rejouer, #quitter, #fin").css('visibility','visible');
+                    $("#rejouer, #quitter").css('top','70%');
+                    $('#gagne, #rejouer, #quitter, #fin').addClass('magictime spaceInDown');
+                    startConfetti();
+              }
+
+        });
+
+  })      
+
+
+
+    </script>
+  </head>
+  <body>
+    <div id="timer">00 : 00</div>
+    <div id="play"></div>
+    <div id="reset"></div>
+    <div id="perdu">Perdu :(</div>
+    <div id="gagne">Bravo !!</div>
+    <div id="fin">Tu as officiellement un œil digne des plus grands artistes :)</div>
+    <button id="rejouer">Rejouer</button>
+    <button id="quitter">Quitter</button>
+
+    <div id="score"></div>
+    <div id="espaceJeu">
+        <div class="cercles1 intrus"></div>
+        <div class="cercles1 autres A1"></div>
+        <div class="cercles1 autres B1"></div>
+        <div class="cercles1 autres C1"></div>
+
+        <div class="cercles2 autres D1"></div>
+        <div class="cercles2 autres E1"></div>
+        <div class="cercles2 autres F1"></div>
+        <div class="cercles2 autres G1"></div>
+        <div class="cercles2 autres H1"></div>
+
+        <div class="cercles3 autres I1"></div>
+        <div class="cercles3 autres J1"></div>
+        <div class="cercles3 autres K1"></div>
+        <div class="cercles3 autres L1"></div>
+        <div class="cercles3 autres M1"></div>
+        <div class="cercles3 autres N1"></div>
+        <div class="cercles3 autres O1"></div>
+
+        <div class="cercles4 autres P1"></div>
+        <div class="cercles4 autres Q1"></div>
+        <div class="cercles4 autres R1"></div>
+        <div class="cercles4 autres S1"></div>
+        <div class="cercles4 autres T1"></div>
+        <div class="cercles4 autres U1"></div>
+        <div class="cercles4 autres V1"></div>
+        <div class="cercles4 autres W1"></div>
+        <div class="cercles4 autres X1"></div>
+  </div>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+  </body>
+
+
+<link rel="stylesheet" href="css/magic.css">
+</html>

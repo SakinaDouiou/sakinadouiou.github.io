@@ -1,0 +1,197 @@
+body{background: #191919;}
+
+.starlight{
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	padding:0;
+	margin:0;
+}
+
+#texte{font-size:35px;
+		font-family: 'Varela Round', sans-serif;
+		color:white;
+		text-align:center;
+		position:absolute;
+		left:25%;
+		right:25%;
+		top:30%;}
+
+#jouer{font-size:20px;
+		 font-family: 'Varela Round', sans-serif;
+		 color:black;
+		 border-radius:150px;
+		 height:100px;
+		 width:100px;
+		position :absolute;
+		left:36%;
+		top:65%;
+		background-color:lightyellow;
+		border-style:none;}
+
+#partir{font-size:20px;
+		 font-family: 'Varela Round', sans-serif;
+		 color:black;
+		 border-radius:100%;
+		 height:100px;
+		 width:100px;
+		position :absolute;
+		left:56%;
+		top:65%;
+		background-color:lightyellow;
+		border-style:none;
+		z-index:10;}
+
+
+
+
+#timer{color:white;
+		font-size:40px;
+		font-family: 'Varela Round', sans-serif;
+		position: absolute;
+		top:4%;
+		right:25%;}
+
+#perdu{color:white;
+		font-size:60px;
+		font-family: 'Varela Round', sans-serif;
+		position: absolute;
+		left:41%;
+		top:42%;
+		visibility:hidden;}	
+#gagne{color:white;
+		font-size:55px;
+		font-family: 'Varela Round', sans-serif;
+		position: absolute;
+		left:42%;
+		top:39%;
+		visibility:hidden;}	
+
+#fin{color:white;
+		font-size:30px;
+		font-family: 'Varela Round', sans-serif;
+		text-align:center;
+		position: absolute;
+		left:25%;
+		right:25%;
+		top:53%;
+		visibility:hidden;}
+
+#rejouer{visibility:hidden;
+		 font-size:20px;
+		 font-family: 'Varela Round', sans-serif;
+		 border-radius:150px;
+		 height:100px;
+		 width:100px;
+		position :absolute;
+		left:36%;
+		top:65%;
+		background-color:#426CC6;
+		border-style:none;}
+
+#quitter{visibility:hidden;
+		font-size:20px;
+		font-family: 'Varela Round', sans-serif;
+		 border-radius:150px;
+		 height:100px;
+		 width:100px;
+		position :absolute;
+		left:56%;
+		top:65%;
+		background-color:#426C9A;
+		border-style:none;
+		z-index:10;}
+
+#score{color:white;
+	   font-family: 'Varela Round', sans-serif;
+	   font-size:100px;
+	   position:absolute;
+	   top:45%;
+	   left:20%;}
+
+#espaceJeu { position:absolute;
+			right:10%;
+			top:15%;
+			width:500px;
+			height:500px;
+			z-index:0;}
+		
+.cercles1{position:absolute;
+		  height:245px;
+		  width:245px;
+		  border-radius:150px;
+		  z-index:1;}
+.cercles2{position:absolute;
+		  height:155px;
+		  width:155px;
+		  border-radius:150px;
+		  z-index:1;
+		  visibility:hidden;}
+.cercles3{position:absolute;
+		  height:120px;
+		  width:120px;
+		  border-radius:150px;
+		  z-index:1;
+		  visibility:hidden;}
+.cercles4{position:absolute;
+		  height:95px;
+		  width:95px;
+		  border-radius:150px;
+		  z-index:1;
+		  visibility:hidden;}			  
+
+.autres{background-color:#66A8E9;}
+.intrus{background-color:#B2A8E9;
+		position:absolute;
+		left:51%;
+		top:0%;}
+
+.A1{position:absolute;
+	 left:0%;
+	 top:0%;}
+.B1{position:absolute;
+	 left:0%;
+	 top:51%;}
+.C1{position:absolute;
+	 left:51%;
+	 top:51%;}
+
+.D1{position:absolute;
+	 left:33%;
+	 top:33%;}
+.E1{position:absolute;
+	 left:66%;
+	 top:33%;}
+.F1{position:absolute;
+	 left:0%;
+	 top:66%;}
+.G1{position:absolute;
+	 left:33%;
+	 top:66%;}
+.H1{position:absolute;
+	 left:66%;
+	 top:66%;}
+
+.I1{position:absolute;
+	 left:0%;
+	 top:50%;}
+.J1{position:absolute;
+	 left:25%;
+	 top:50%;}
+.K1{position:absolute;
+	 left:50%;
+	 top:50%;}
+.L1{position:absolute;
+	 left:75%;
+	 top:50%;}
+.M1{position:absolute;
+	 left:0%;
+	 top:75%;}
+.N1{position:absolute;
+	 left:25%;
+	 top:75%;}
+.O1{position:absolute;
+	 left:50%;
+	 top:75%;}
+
+

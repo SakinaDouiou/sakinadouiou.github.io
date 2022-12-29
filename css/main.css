@@ -1,0 +1,547 @@
+body{
+  background:white;
+  margin-bottom:5%;
+}
+
+@media (max-width:700px){
+	.pages{
+		visibility:hidden;
+	}
+
+	
+}
+
+@font-face {
+ font-family: 'Spartan';
+ src: url("../font/LeagueSpartan-ExtraLight.ttf") format("truetype");
+ font-style: normal;
+ font-weight: 300;
+}
+
+@font-face {
+ font-family: 'SpartanBold';
+ src: url("../font/LeagueSpartan-Light.ttf") format("truetype");
+ font-style: bold;
+ font-weight: 900;
+}
+
+
+.SD{
+	height:auto;
+	width:80px;
+}
+
+.pages{
+    list-style: none;
+    margin-right:6%;
+    display: inline-block;
+    font-family: 'Spartan', sans-serif;
+    position:relative;
+    font-size:21px;
+   /* background-color:pink;*/
+}
+
+.logo{
+	list-style: none;
+	display: inline-block;
+	margin-right:6%;
+	/*background-color:yellow;*/
+}
+
+.menu{
+	margin:1.5%;
+	padding-bottom:2%;
+}
+
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+a{
+	color:darkgrey;
+	outline:none;
+	text-decoration: none;
+}
+
+a:hover{
+	color:black;
+}
+
+
+
+.Instagram{
+	position:fixed;
+	bottom:2%;
+	right:2%;
+}
+
+.apercu{
+	height:20px;
+}
+
+
+
+
+
+.fonddiapo{
+	position:absolute;
+	left:15%;
+	top:23%;
+/*	background-color:yellow;*/
+	width:70%;
+	height:70%;
+}
+
+
+#gauche{
+	position:absolute;
+	opacity:0%;
+	left:0%;
+/*	background-color:pink;*/
+	width:33.3%;
+	height:100%;
+	cursor:w-resize;
+}
+
+#droite{
+	position:absolute;
+	opacity:0%;
+	right:0%;
+/*	background-color:blue;*/
+	width:33.3%;
+	height:100%;
+	cursor:e-resize;
+}
+
+
+.diapo {
+opacity:0;
+position: absolute;
+left:50%;
+transform: translate3d(-50%,-50%,0);
+top: 50%;
+transition: opacity 1s;
+/*width: 100%;*/
+max-height:100%;
+width:auto;
+}
+
+#IndexPremier{
+opacity:1;
+}
+
+
+
+
+
+/*--------PAGES-----------*/
+
+.Boite{
+	/*background-color:lightblue;*/
+	position:relative;
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow:row;
+}
+
+.date{
+	font-style:italic;
+	font-size:14px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+}
+
+.titre{
+	font-size:22px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+}
+
+.titre:hover{
+	font-family: 'SpartanBold';
+}
+
+.Liste{
+	/*background-color:lightgreen;*/
+	width:50%;
+}
+
+
+
+
+
+
+
+.Portrait{
+	right:0%;
+	left:10%;
+/*	width:70%;*/
+}
+
+.Paysage{
+	right:0%;
+	top:15%;
+	width:100%;
+}
+
+
+
+
+
+
+
+
+
+/*--------PERSO-----------*/
+
+.Img{
+	/*background-color:lightpink;*/
+	width:50%;
+	position:relative;
+}
+
+#BlocBanlieues{
+	position:absolute;
+/*	width:100%;*/
+	top:10%;
+	visibility:hidden;
+}
+
+#BlocWhite{
+	position:absolute;
+	top:0%;
+	visibility:hidden;
+}
+
+#BlocEnnui{
+    position:absolute;
+    visibility:hidden;
+    top:0%;
+}
+
+#BlocBoys{
+    position:absolute;
+    visibility:hidden;
+    top:0%;
+}
+
+.Fixe{
+	position:fixed;
+/*	top:10%;
+	width:30%;*/
+}
+
+
+#PhotoBanlieues{
+	position:relative;
+	width:70%;
+/*	top:15%;*/
+}
+
+#PhotoWhite{
+	position:relative;
+	width:70%;
+}
+
+#PhotoEnnui{
+	position:relative;
+	width:45%;
+}
+
+#PhotoBoys{
+	position:relative;
+	width:45%;
+}
+
+
+
+
+
+
+
+/*--------PAGES PERSO-----------*/
+
+.Photo{
+	height:100%;
+}
+
+.Droite{
+	margin-left:1%;
+}
+
+.Debut{
+	margin-left:10%;
+}
+
+.Fin{
+	margin-right:10%;
+}
+
+
+.slider{
+	position:absolute; 
+		height:65%;
+		width:100%;
+		left:0%;
+	overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+
+.credit{
+	font-size:22px;
+	font-family: 'Spartan', sans-serif;
+	padding-left:4%;
+	padding-right:4%;
+	position:absolute;
+	top:30%;
+}
+
+
+
+
+
+/*--------AUTRE-----------*/
+
+.type{
+	font-size:24px;
+	font-family: 'SpartanBold', sans-serif;
+	color:black;
+}
+
+
+#BlocInsomnie{
+	position:absolute;
+	top:10%;
+	left:10%;
+	visibility:hidden;
+}
+
+#BlocFlouAngele{
+	position:absolute;
+	top:10%;
+	left:10%;
+	visibility:hidden;
+}
+
+#BlocMifasol{
+	position:absolute;
+	top:10%;
+	left:10%;
+	visibility:hidden;
+}
+
+#BlocDeclaringIndependence{
+	position:absolute;
+	top:10%;
+	left:10%;
+	visibility:hidden;
+}
+
+#BlocFindColor{
+	position:absolute;
+	top:10%;
+	left:10%;
+	visibility:hidden;
+}
+
+#BlocInesLongevial{
+	position:absolute;
+	top:10%;
+	left:10%;
+	visibility:hidden;
+}
+
+
+
+
+#ImgInsomnie{
+	position:relative;
+	width:70%;
+}
+
+#ImgFlouAngele{
+	position:relative;
+	width:70%;
+}
+
+#ImgMifasol{
+	position:relative;
+	width:70%;
+}
+
+#ImgDeclaringIndependence{
+	position:relative;
+	width:70%;
+}
+
+#ImgFindColor{
+	position:relative;
+	width:70%;
+}
+
+#ImgInesLongevial{
+	position:relative;
+	width:70%;
+}
+
+
+
+/*-------------PAGES AUTRE---------------*/
+
+.Bloc{
+	/*background-color:lightblue;*/
+	position:relative;
+	width:70%;
+	margin-top:4%;
+	margin-left:auto;
+	margin-right:auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow:row;
+}
+
+.Video{
+	/*background-color:lightpink;*/
+	width:60%;
+	position:relative;
+	z-index:0;
+}
+
+
+.VideoComplete{
+	position:relative;
+	left:-10%;
+	width:90%;
+}
+
+
+.overlay{
+	position:absolute;
+    top:43%;
+    left:-10%;
+/*    left:21%;*/
+    z-index:1;
+    font-size:23px;
+	font-family: 'Spartan', sans-serif;
+	color:white;
+	text-align:center;
+	width:90%;
+}
+
+.overlay:hover{
+	font-size:23px;
+	font-family: 'SpartanBold';
+	color:white;
+}
+
+
+
+
+
+
+.Explication{
+	width:40%;
+	text-align:justify;
+}
+
+.TitreProjetAutre{
+	font-size:23px;
+	font-family: 'SpartanBold';
+	color:black;
+	line-height:130%;
+}
+
+.logiciels{
+	font-style:italic;
+	font-size:17px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+}
+
+.ExplicationEcrite{
+	font-size:20px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+}
+
+.LienDansTexte{
+	color:black;
+}
+
+.LienDansTexte:hover{
+	font-family: 'SpartanBold';
+}
+
+
+
+/*--------INFO-----------*/
+
+#BoitePresentation{
+/*	background-color:red;*/
+	width:70%;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow:row;
+}
+
+#BoitePubliPro{
+	width:70%;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow:row;
+	justify-content: flex-end;
+}
+
+.Publications{
+	text-align: right;
+/*	background-color:orange;*/
+	width:80%;
+}
+
+.Professionnel{
+	text-align: right;
+/*	background-color:yellow;*/
+	width:20%;
+}
+
+.contenu{
+	font-size:20px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+}
+
+.contact{
+	font-size:18px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+	text-indent: 10%;
+	line-height: 130%;
+}
+
+.contact:hover{
+	font-family: 'SpartanBold';
+}
+
+.TitrePubliPro{
+	font-size:20px;
+	font-family: 'Spartan', sans-serif;
+	color:black;
+}
+
+.TitrePubliPro:hover{
+	font-family: 'SpartanBold';
+}
+
